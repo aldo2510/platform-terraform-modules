@@ -4,7 +4,7 @@ Reusable Terraform modules for the Golden Path workshop.
 
 ## Module: azure-container-apps
 
-Creates an Azure Resource Group, Azure Container Registry, Log Analytics workspace, Container Apps Environment, and a public Azure Container App. It also grants the GitHub Actions service principal AcrPush and the Container App managed identity AcrPull.
+Creates an Azure Resource Group, Azure Container Registry, Log Analytics workspace, Container Apps Environment, and a public Azure Container App. It also grants the GitHub Actions service principal Contributor on the ACR (so `az acr build` can run in this workshop) and the Container App managed identity AcrPull. The ACR role is intentionally broad for the demo; use a narrower custom role or separate image-build identity in production.
 
 Usage is shown in `golden-path-template/terraform`.
 
