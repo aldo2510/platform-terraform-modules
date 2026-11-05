@@ -31,7 +31,7 @@ resource "azurerm_container_registry" "main" {
 
 resource "azurerm_role_assignment" "github_acr_push" {
   scope                = azurerm_container_registry.main.id
-  role_definition_name = "AcrPush"
+  role_definition_name = "Contributor"
   principal_id         = var.azure_deployer_object_id
   principal_type       = "ServicePrincipal"
 }
