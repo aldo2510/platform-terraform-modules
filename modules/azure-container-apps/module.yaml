@@ -1,0 +1,31 @@
+id: azure-container-apps
+name: Azure Container Apps
+version: "1.0.0"
+path: modules/azure-container-apps
+status: approved
+inputs:
+  - name: project_name
+    type: string
+    required: true
+    pattern: "^[a-zA-Z][a-zA-Z0-9-]{2,19}$"
+  - name: location
+    type: string
+    required: true
+    default: eastus
+  - name: azure_deployer_object_id
+    type: string
+    required: true
+    sensitive: true
+    source: github_secret:AZURE_DEPLOYER_OBJECT_ID
+  - name: image_name
+    type: string
+    required: false
+    default: mcr.microsoft.com/azuredocs/containerapps-helloworld:latest
+  - name: container_cpu
+    type: number
+    required: false
+    default: 0.25
+  - name: container_memory
+    type: string
+    required: false
+    default: 0.5Gi
