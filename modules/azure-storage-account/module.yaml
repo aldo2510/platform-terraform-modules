@@ -1,0 +1,33 @@
+id: azure-storage-account
+name: Azure Storage Account
+version: "1.0.0"
+path: modules/azure-storage-account
+status: approved
+inputs:
+  - name: subscription_id
+    type: string
+    required: true
+    sensitive: true
+    source: github_secret:AZURE_SUBSCRIPTION_ID
+  - name: resource_group_name
+    type: string
+    required: true
+    pattern: "^[A-Za-z0-9._()-]{1,90}$"
+  - name: storage_account_name
+    type: string
+    required: true
+    pattern: "^[a-z0-9]{3,24}$"
+  - name: location
+    type: string
+    required: true
+    default: eastus
+    enum: [eastus, centralus]
+  - name: environment
+    type: string
+    required: true
+    enum: [dev, staging, prod]
+  - name: replication_type
+    type: string
+    required: true
+    default: LRS
+    enum: [LRS, ZRS, GRS]
