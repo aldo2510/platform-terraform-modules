@@ -1,0 +1,18 @@
+schema_version: 1
+catalog:
+  - id: azure-storage-account
+    name: Azure Storage Account
+    version: "1.0.0"
+    path: modules/azure-storage-account
+    provider: azure
+    description: Creates an Azure Resource Group and secure Storage Account.
+    contract: modules/azure-storage-account/module.yaml
+    status: approved
+  - id: azure-container-apps
+    name: Azure Container Apps
+    version: "1.0.0"
+    path: modules/azure-container-apps
+    provider: azure
+    description: Deploys an Azure Container Apps baseline.
+    contract: modules/azure-container-apps/module.yaml
+    status: approved
